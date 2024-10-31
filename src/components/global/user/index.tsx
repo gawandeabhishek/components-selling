@@ -3,7 +3,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { UserButton, useUser } from "@clerk/nextjs";
-// import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import React from "react";
 
@@ -12,9 +11,8 @@ type Props = {
 };
 
 const User = ({ login = true }: Props) => {
-  // const user = await currentUser();
 
-  const { user, isLoaded, isSignedIn } = useUser();
+  const { user } = useUser();
   return (
     <>
       {user ? (
